@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestione aeroportuale</title>
+  <link rel="stylesheet" href="insertCss.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="mioScript.js"></script>
+  
+</head>
+<body>
+  
+  <div class="wrapper">
+    <br><br><br> <br><br><br>    <br><br>  <br><br>  <br><br>       
+    <h1>Operazioni di inserimento</h1>
+    <form method="post" action="insertData.php" name="mioForm"> 
+    <br>
+     
+        <select id="mySelect" class="custom-select" name="Inserisci">
+          <option value="">  Inserisci qui  </option>
+          <option value="newAirplane">1.1 Inserisci un nuovo aereo di linea</option>
+          <option value="newCargoPlane">1.2 Inserisci un nuovo aereo cargo</option>
+          <option value="newAirport">2. Inserisci un nuovo aeroporto</option>
+          <option value="newFlight">3. Inserisci un nuovo volo</option>
+          <option value="newPassenger">4. Inserisci un nuovo passeggero</option>
+          <option value="newNationality">5. Inserisci varie nazionalità</option>
+          <option value="newGoods">6. Inserisci una nuova merce</option>
+          <option value="newGoodsCategory">7. Inserisci categorie di merce</option>
+          <option value="newReservation">8. Inserisci una nuova prenotazione</option>
+          <option value="newLinkFlightCargo">Aggiuntiva : collega il volo con l'aereo cargo</option>
+          <option value="newLinkFlightDiLinea">Aggiuntiva : collega il volo con l'aereo di line</option>
+        </select>
+     
+    <br><br><br>
+     
+    <div id="newAirplaneOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield" name ="alMatricola" placeholder="Matricola">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="alMarca" placeholder="Marca">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="alDataAcquisto" placeholder="Data di acquisto">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" class="transparent-textfield" name ="alCapacità" placeholder="Capacità">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+     
+    <div id="newCargoPlaneOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield"  name ="acMatricola" placeholder="Matricola">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield"  name ="acMarca" placeholder="Marca">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield"  name ="acDataAcquisto" placeholder="Data di acquisto">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newAirportOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield" name ="aeCodice" placeholder="Codice">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="aeNome" placeholder="Nome">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="aeCittà" placeholder="Città">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="aeStato" placeholder="Stato">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newFlightOptions" class="text-box" style="display: none;">
+      <input type="number" class="transparent-textfield" name ="voID" placeholder="ID">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="voData" placeholder="Data">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="time" class="transparent-textfield" name ="voDurata" placeholder="Durata">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="voAeCodice" placeholder="Aeroport Codice">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newPassengerOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield" name ="paCF" placeholder="CF">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="paNome" placeholder="Nome">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="paCognome" placeholder="Cognome">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="paAeLinea" placeholder="Aereo di linea matricola">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newNationalityOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield" name ="naNome" placeholder="Nome">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="naCF" placeholder="Passeggero CF">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newGoodsOptions" class="text-box" style="display: none;">
+      <input type="number" class="transparent-textfield"  name ="meID" placeholder="ID">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" class="transparent-textfield"  name ="mePeso" placeholder="Peso">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield"  name ="meAeCargo" placeholder="Aereo cargo matricola">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newGoodsCategoryOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield" name ="caNome" placeholder="Nome">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" class="transparent-textfield" name ="caID" placeholder="Merce id">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newReservationOptions" class="text-box" style="display: none;">
+      <input type="number" class="transparent-textfield" name ="prID" placeholder="ID">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="prNp" placeholder="Nazione partenza">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="prNa" placeholder="Nazione arrivo">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="prTipologia" placeholder="Tipologia">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" class="transparent-textfield" name ="prCF" placeholder="Passeggero CF">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" class="transparent-textfield" name ="prMeID" placeholder="Metodo Pagamento ID">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" class="transparent-textfield" name ="prVoID" placeholder="Volo ID">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newLinkFlightCargoOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield" name ="efAeCargo" placeholder="Aereo cargo matricola">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" class="transparent-textfield" name ="efVoID" placeholder="Volo id">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div id="newLinkFlightDiLineaOptions" class="text-box" style="display: none;">
+      <input type="text" class="transparent-textfield" name ="efAeDiLinea" placeholder="Aereo di linea">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" class="transparent-textfield" name ="efVoID" placeholder="Volo id">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <br><br><br><br><br><br><br>
+    <input type="submit" class="btn1" value="Invia" style="color:#ffffff" class="btn1">
+    <br><br>
+    <button type="submit" class="btn1" ><a href="page1.html" style="color:#ffffff">Ritorna indietro</a></button> 
+    </form>
+   <br><br><br>
+    <button type="submit" class="btn" ><a href="index.html">Logout</a></button>
+  </div>
+  <script>
+
+  </script>
+</body>
+</html>

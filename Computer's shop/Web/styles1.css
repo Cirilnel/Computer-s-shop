@@ -1,0 +1,81 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.wrapper{
+  width: 800px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+}
+.wrapper h1{
+  font-size: 36px;
+  text-align: center;
+}
+ 
+  
+ 
+ 
+.wrapper .btn1 {
+  
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 45px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color :  #ffffff;
+  font-weight: 600;
+  text-decoration: none; /* Rimuove la sottolineatura del link */
+  transition: all 0.3s; /* Aggiunta di una transizione per una transizione più fluida */
+  border: 2px solid #ffffff; /* Bordo nero */
+}
+
+.wrapper .btn1:hover {
+  transform: scale(1.1); /* Ingrandisce il bottone del 10% */
+  background-color: #4CAF50; /* Cambia il colore di sfondo a verde */
+  border: 2px solid #ffffff; /* Cambia il colore del bordo a nero durante l'hover */
+  
+}
+
+.wrapper .btn:hover {
+  transform: scale(1.1); /* Ingrandisce il bottone del 10% */
+  background-color: #f00101; /* Cambia il colore di sfondo a verde */
+  border: 2px solid #ffffff; /* Cambia il colore del bordo a nero durante l'hover */
+}
+.wrapper .btn {
+  width: 50%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+
+  margin: auto;
+  display: block;  
+}
+ 
